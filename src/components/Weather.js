@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 const Weather = () => {
   const [errorMsg, setErrorMsg] = useState("");
+  const [test,setTest]=useState("");
   const [weatherData, setWeatherData] = useState([]);
   const [weatherIcon, setWeatherIcon] = useState("");
 

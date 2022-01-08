@@ -4,8 +4,6 @@
 
 The is a React-based project I took up to learn React JS as well as further improving on my HTML, CSS and Javascript skills.
 
-You can visit it at https://lekjingkai.github.io/momentum-clone/
-
 This project is based on the Google Chrome browser extension called Momentum (https://momentumdash.com/). It's a custom home page that replaces new tabs and the home page with a personal productivty app that provides a personal space where you can have main goal, a todo app, store links and a weather app. The purpose of this app is to increase productivity and beat procastination with todo reminders. One touch I added is adding a mobile view for the app.
 
 The purpose of this project is to create a clone of the Momentum app with the following features:

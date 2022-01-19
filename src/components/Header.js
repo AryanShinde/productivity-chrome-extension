@@ -28,17 +28,34 @@ const Header = () => {
   //fetch image
 
   useEffect(() => {
-    const queryArray = ["ocean", "forest", "beach", "mountain", "frozen", "outdoors", "clouds", "night%20sky", "space", "universe"];
+    const queryArray = [
+      "ocean",
+      "forest",
+      "beach",
+      "mountain",
+      "frozen",
+      "outdoors",
+      "clouds",
+      "night%20sky",
+      "space",
+      "universe",
+    ];
 
     const fetchImage = async () => {
-      const res = await fetch(`https://pexelsdimasv1.p.rapidapi.com/v1/search?query=${random_item(queryArray)}&per_page=20&orientation=landscape`, {
-        method: "GET",
-        headers: {
-          authorization: process.env.REACT_APP_PEXELS_KEY,
-          "x-rapidapi-key": process.env.REACT_APP_RAPID_KEY,
-          "x-rapidapi-host": "PexelsdimasV1.p.rapidapi.com",
-        },
-      });
+      const res = await fetch(
+        `https://pexelsdimasv1.p.rapidapi.com/v1/search?query=${random_item(
+          queryArray
+        )}&per_page=20&orientation=landscape`,
+        {
+          method: "GET",
+          headers: {
+            authorization: process.env.REACT_APP_PEXELS_KEY,
+            "x-rapidapi-key": process.env.REACT_APP_RAPID_KEY,
+            "x-rapidapi-host": "PexelsdimasV1.p.rapidapi.com",
+          },
+        }
+      );
+      console.log(res);
       setImageLoading(false);
       const data = await res.json();
       return data;
@@ -53,7 +70,9 @@ const Header = () => {
         setFetchStatus(true);
         setImageData(imageFromApi);
         if (imageFromApi.photos.length > 0) {
-          setRandomImageCount(Math.floor(Math.random() * imageFromApi.photos.length - 1));
+          setRandomImageCount(
+            Math.floor(Math.random() * imageFromApi.photos.length - 1)
+          );
         }
       }
     };
@@ -71,7 +90,9 @@ const Header = () => {
           <BGCredits
             author={imageData.photos[randomImageCount].photographer}
             authorUrl={"https://www.pexels.com/@michael-block-1691617"}
-            url={"https://www.pexels.com/photo/photo-of-stream-during-daytime-3225517/"}
+            url={
+              "https://www.pexels.com/photo/photo-of-stream-during-daytime-3225517/"
+            }
           />
         )
       ) : (
@@ -118,7 +139,9 @@ const Header = () => {
             <div
               className={`bg-image ${imageLoading ? "" : "fadeInAnim"}`}
               style={{
-                backgroundImage: `url(${require("../assets/placeholder.jpg").default})`,
+                backgroundImage: `url(${
+                  require("../assets/placeholder.jpg").default
+                })`,
               }}
             ></div>
           )}
@@ -130,7 +153,11 @@ const Header = () => {
               <MainFocus />
             </div>
           </div>
-          <Bottom left={leftBottomComponent} center={centerBottomComponent} right={rightBottomComponent} />
+          <Bottom
+            left={leftBottomComponent}
+            center={centerBottomComponent}
+            right={rightBottomComponent}
+          />
         </div>
       )}
     </div>

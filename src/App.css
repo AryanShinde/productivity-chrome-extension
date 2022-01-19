@@ -15,6 +15,12 @@
   text-shadow: 0 1px 0 black;
 }
 
+body{
+
+background-image: url(https://source.unsplash.com/user/c_v_r/1900x800);
+
+}
+
 input[type="text"],
 input[type="button"],
 input[type="submit"] {
